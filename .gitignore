@@ -1,0 +1,20 @@
+@'
+# عام
+*.log
+*.suo
+*.user
+.env
+.env.*
+
+# .NET (Backend)
+**/bin/
+**/obj/
+**/.vs/
+appsettings.Development.json
+appsettings.Local.json
+
+# Angular / Node (Frontend)
+**/node_modules/
+**/dist/
+**/.angular/
+'@ | Set-Content -Encoding UTF8 .gitignore

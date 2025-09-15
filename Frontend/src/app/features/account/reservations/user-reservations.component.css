@@ -1,0 +1,49 @@
+/* عنوان صغير فوق الحقل */
+.field {
+  margin-bottom: 12px;
+}
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1;
+  color: #374151; /* رمادي غامق */
+  font-weight: 600;
+}
+
+/* تخصيص شكل الـ mat-form-field ليطابق التصميم */
+:host ::ng-deep .date-plain .mat-mdc-text-field-wrapper {
+  background: #f6f8fa !important;            /* خلفية فاتحة */
+  border-radius: 8px !important;             /* زوايا ناعمة */
+}
+
+/* لون الحد */
+:host ::ng-deep .date-plain .mdc-notched-outline__leading,
+:host ::ng-deep .date-plain .mdc-notched-outline__trailing {
+  border-color: #9aa4b2 !important;          /* رمادي وسط */
+}
+
+/* إلغاء النوتش (الشق) حتى يكون الحد كامل بدون قطع */
+:host ::ng-deep .date-plain .mdc-notched-outline__notch {
+  border: none !important;
+}
+
+/* إزالة تأثيرات الفوكس الافتراضية */
+:host ::ng-deep .date-plain .mat-mdc-form-field-focus-overlay,
+:host ::ng-deep .date-plain .mat-mdc-form-field-ripple {
+  display: none !important;
+}
+
+/* ألوان النصوص والأيقونة داخل الحقل */
+:host ::ng-deep .date-plain input.mat-mdc-input-element {
+  color: #111827 !important;                 /* نص الحقل */
+  padding: 10px 12px !important;             /* راحة أكثر */
+}
+:host ::ng-deep .date-plain .mat-mdc-form-field-icon-suffix {
+  color: #374151 !important;                 /* أيقونة الكاليندر */
+}
+
+/* Placeholder بلون أفتح */
+:host ::ng-deep .date-plain input::placeholder {
+  color: #6b7280 !important;
+}

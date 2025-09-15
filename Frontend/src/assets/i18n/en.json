@@ -1,0 +1,200 @@
+{
+  "brand": { 
+    "name": "REST",
+    "name2": "HOTEL",
+   "logoAlt": "Rest Hotel logo" 
+  },
+
+  "nav": {
+     "home": "Home",
+      "rooms": "Rooms",
+       "contact": "Contact Us",
+        "admin": "Admin"
+       },
+  "auth": {
+     "login": "Sign In",
+      "signup": "Sign Up",
+       "logout": "Logout" 
+      },
+  "bookings": "My bookings",
+
+  
+
+  "home": {
+    "heroTitle": "Welcome to Our Luxury Rooms",
+    "heroSubtitle": "Discover comfort and elegance in every detail",
+    "availableRooms": "Available Rooms",
+    "latestRooms": "Latest Rooms",
+    "noRoomsSelectedDates": "No rooms available for selected dates.",
+    "noRoomsYet": "No rooms yet. Please check back later.",
+    "servicesTitle": "Services & Amenities",
+    "servicesSubtitle": "Everything you need for a relaxing stay"
+  },
+  "booking": {
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "datePlaceholder": "MM/DD/YYYY"
+  },
+  "room": {
+    "title": "Room {{num}}",
+    "imageAlt": "Room {{num}} photo",
+    "perNight": "/night"
+  },
+  "services": {
+    "concierge": "24/7 Concierge",
+    "conciergeDesc": "Our team is available around the clock to assist you.",
+    "spa": "Luxury Spa",
+    "spaDesc": "Relaxation and massage sessions by professionals.",
+    "dining": "Fine Dining",
+    "diningDesc": "Award-winning restaurants with a curated menu.",
+    "pool": "Heated Pool",
+    "poolDesc": "Enjoy our indoor heated swimming pool.",
+    "fitness": "Fitness Center",
+    "fitnessDesc": "Modern equipment and personal training sessions.",
+    "parking": "Valet Parking",
+    "parkingDesc": "Convenient drop-off and pick-up at the entrance."
+  },
+  "buttons": {
+    "search": "Search"
+  },
+  "common": {
+    "view": "View",
+    "seeAll": "See all",
+    "searching": "Searching...",
+    "loading": "Loading…",
+  "priceLabel": "Price:",
+  "edit": "Edit",
+  "cancel": "Cancel",
+  "save": "Save",
+  "close": "Close",
+   
+    "ok": "OK",
+    "dismiss": "Dismiss"
+  },
+
+
+
+  "contact": {
+  "header": "Rest Hotel — Al Olaya, Riyadh",
+  "intro": "Visit us or drop a message — we reply within 24 hours.",
+  "addressLine": "King Fahd Rd, Al Olaya, Riyadh 12214",
+  "openInMaps": "Open in Google Maps",
+  "phone": "+966 (555) 123-4567",
+  "email": "reservations@resthotel.com",
+  "formTitle": "Contact Us",
+  "statusSuccess": "Thanks! We received your message.",
+  "statusError": "Something went wrong. Please try again.",
+  "fields": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "namePh": "Your name",
+    "emailPh": "you@email.com",
+    "messagePh": "How can we help?"
+  },
+  "send": "Send Message",
+  "sending": "Sending…",
+  "mapTitle": "Rest Hotel - Al Olaya, Riyadh"
+},
+
+
+  "roomDetails": { "title": "Room Details" },
+  "roomDetail": {
+    "label": "Room",
+    "roomNumberLabel": "Room Number",
+    "descriptionLabel": "Description",
+    "capacity": "Capacity",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "imageAlt": "Room {{num}} photo"
+  },
+  "bookingInfo": {
+    "guestName": "Guest Name",
+    "guestNamePh": "Your full name",
+    "guestNameErr": "Please enter your name (at least 2 characters)",
+    "checkInErr": "Please select a check-in date",
+    "checkOutErr": "Please select a check-out date"
+  },
+  "bookButtons": { "bookNow": "Book now" },
+  "roomLoading": "Loading room…",
+
+  "roomsAll": {
+  "heroTitle": "Browse All Rooms",
+  "heroSubtitle": "Find the perfect room for your stay",
+  "filters": {
+    "searchLabel": "Search",
+    "searchPh": "Room number or keywords",
+    "capacityLabel": "Capacity",
+    "capacityAny": "Any",
+    "sortLabel": "Sort",
+    "sortLatest": "Latest",
+    "sortPriceAsc": "Price: Low → High",
+    "sortPriceDesc": "Price: High → Low",
+    "sortCapacity": "Capacity",
+    "reset": "Reset"
+  },
+  "empty": "No rooms matched your filters."
+},
+
+"reservations": {
+  "title": "My Reservations",
+  "welcome": "Welcome, {{name}}.",
+  "empty": "No reservations yet.",
+  "status": {
+    "active": "Active",
+    "canceled": "Canceled"
+  }
+},
+
+  "toasts": {
+    "reservations": {
+      "updated": "Reservation updated successfully ✅",
+      "canceled": "Reservation canceled",
+      "updateFailed": "Failed to update reservation",
+      "cancelFailed": "Failed to cancel reservation"
+    }
+  },
+  
+  "dialogs": {
+    "confirmCancel": "Cancel this reservation?"
+  },
+
+"login": {
+  "title": "Sign In",
+  "subtitle": "Welcome back to Rest Hotel",
+  "email": "Email",
+  "emailPh": "you@email.com",
+  "emailErr": "Enter a valid email.",
+  "password": "Password",
+  "passwordPh": "••••••••",
+  "pwdErr": "Password is required (min 6 chars).",
+  "signIn": "Sign In",
+  "signingIn": "Signing in…",
+  "noAccount": "Don’t have an account?",
+  "createOne": "Create one"
+},
+
+
+"register": {
+  "title": "Create an account",
+  "subtitle": "Join Rest Hotel and book your stay",
+  "fullName": "Full Name",
+  "fullNamePh": "Your full name",
+  "fullNameErr": "Name is required (min 2 chars).",
+  "email": "Email",
+  "emailPh": "you@email.com",
+  "emailErr": "Enter a valid email.",
+  "password": "Password",
+  "passwordPh": "••••••••",
+  "passwordErr": "Password min length is 6.",
+  "confirm": "Confirm Password",
+  "confirmPh": "••••••••",
+  "mismatch": "Passwords do not match.",
+  "creating": "Creating account…",
+  "signUp": "Sign Up",
+  "hasAccount": "Already have an account?",
+  "signIn": "Sign in"
+}
+
+
+}

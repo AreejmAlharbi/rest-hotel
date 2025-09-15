@@ -1,0 +1,154 @@
+<section class="min-h-screen bg-slate-900 text-slate-100">
+  <div class="mx-auto max-w-7xl px-6 py-10">
+    <div class="mb-6">
+      <h1 class="text-3xl font-extrabold">{{ 'reservations.title' | translate }}</h1>
+      <p class="text-slate-300" *ngIf="user()">
+        {{ 'reservations.welcome' | translate:{ name: (user()?.fullName || '') } }}
+      </p>
+    </div>
+
+    <div *ngIf="loading()" class="text-slate-300">{{ 'common.loading' | translate }}</div>
+    <div *ngIf="error()" class="text-rose-400">{{ error() }}</div>
+    <div *ngIf="!loading() && items().length === 0" class="text-slate-300">
+      {{ 'reservations.empty' | translate }}
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" *ngIf="items().length">
+      <article *ngFor="let r of items()"
+               class="rounded-2xl bg-[#F3ECE1] text-slate-800 ring-1 ring-[#E6D9C9] p-4 shadow-sm">
+        <div class="flex items-start justify-between">
+          <div>
+            <!-- العنوان بدون # -->
+            <h3 class="text-lg font-semibold text-slate-900">
+              {{ 'room.title' | translate:{ num: (r.Room?.RoomNumber ?? r.RoomId) } }}
+            </h3>
+
+            <!-- سعة الأشخاص (العدد فقط) -->
+            <div class="mt-1 flex items-center gap-3 text-sm text-slate-700" *ngIf="r.Room">
+              <span class="inline-flex items-center gap-1">
+                <span class="material-icons-outlined text-slate-600 text-[18px] align-[-2px]">group</span>
+                <span>{{ r.Room?.Capacity || r.Room?.capacity || '-' }}</span>
+              </span>
+            </div>
+
+            <!-- السعر -->
+            <div class="mt-1 text-slate-700">
+              <span class="font-medium">{{ 'common.priceLabel' | translate }}</span>
+              <span>{{ (r.Room?.Price || r.Room?.price) | currency:'SAR':'symbol':'1.0-0' }}</span>
+              <span class="text-slate-500"> {{ 'room.perNight' | translate }}</span>
+            </div>
+
+            <!-- Check-in / Check-out -->
+            <div class="mt-2 text-slate-800">
+              <div>{{ 'booking.checkIn' | translate }}: <span class="font-medium">{{ r.CheckInDate | date:'yyyy-MM-dd' }}</span></div>
+              <div>{{ 'booking.checkOut' | translate }}: <span class="font-medium">{{ r.CheckOutDate | date:'yyyy-MM-dd' }}</span></div>
+            </div>
+
+            <!-- حالة الحجز -->
+            <div class="mt-2">
+              <span
+                [ngClass]="{
+                  'inline-flex items-center rounded-full px-3 py-1 text-xs': true,
+                  'bg-emerald-500/15 text-emerald-600': !r.IsCanceled,
+                  'bg-rose-500/15 text-rose-600': r.IsCanceled
+                }"
+              >
+                <span class="material-icons-outlined text-[14px] mr-1">
+                  {{ r.IsCanceled ? 'cancel' : 'check_circle' }}
+                </span>
+                {{ r.IsCanceled ? ('reservations.status.canceled' | translate) : ('reservations.status.active' | translate) }}
+              </span>
+            </div>
+          </div>
+
+          <img *ngIf="r.Room?.ImageUrl" [src]="r.Room?.ImageUrl" alt=""
+               class="w-28 h-20 object-cover rounded-lg ring-1 ring-[#E6D9C9]" />
+        </div>
+
+        <!-- Actions -->
+        <div class="mt-4 flex gap-3" *ngIf="editingId() !== r.Id && !r.IsCanceled">
+          <button class="rounded-xl bg-slate-200 text-slate-900 px-4 py-2 hover:bg-slate-300"
+                  (click)="startEdit(r)">
+            {{ 'common.edit' | translate }}
+          </button>
+          <button class="rounded-xl bg-rose-600 text-white px-4 py-2 hover:bg-rose-500"
+                  (click)="cancelReservation(r)">
+            {{ 'common.cancel' | translate }}
+          </button>
+        </div>
+
+        <!-- Edit form -->
+        <ng-container *ngIf="editingId() === r.Id">
+          <form [formGroup]="form" class="mt-4 grid gap-3">
+            <div>
+              <label class="block text-xs text-slate-600 mb-1">
+                {{ 'bookingInfo.guestName' | translate }}
+              </label>
+              <input formControlName="GuestName"
+                     class="w-full h-[44px] rounded-xl border border-slate-300 bg-white px-3 text-slate-800 outline-none focus:ring-2 focus:ring-slate-300">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              <!-- Check In -->
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-slate-700">
+                  {{ 'booking.checkIn' | translate }}
+                </label>
+                <div class="relative">
+                  <input
+                    matInput
+                    [matDatepicker]="inDp"
+                    formControlName="CheckInDate"
+                    [placeholder]="'booking.datePlaceholder' | translate"
+                    class="block w-full rounded-xl border border-slate-300 bg-white text-slate-800
+                           px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-slate-400 focus:border-slate-400" />
+                  <mat-datepicker-toggle [for]="inDp"
+                                         class="!absolute right-3 top-1/2 -translate-y-1/2">
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #inDp></mat-datepicker>
+                </div>
+                <div class="text-xs text-rose-600" *ngIf="form.get('CheckInDate')?.touched && form.get('CheckInDate')?.invalid">
+                  {{ 'bookingInfo.checkInErr' | translate }}
+                </div>
+              </div>
+
+              <!-- Check Out -->
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-slate-700">
+                  {{ 'booking.checkOut' | translate }}
+                </label>
+                <div class="relative">
+                  <input
+                    matInput
+                    [matDatepicker]="outDp"
+                    formControlName="CheckOutDate"
+                    [placeholder]="'booking.datePlaceholder' | translate"
+                    class="block w-full rounded-xl border border-slate-300 bg-white text-slate-800
+                           px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-slate-400 focus:border-slate-400" />
+                  <mat-datepicker-toggle [for]="outDp"
+                                         class="!absolute right-3 top-1/2 -translate-y-1/2">
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #outDp></mat-datepicker>
+                </div>
+                <div class="text-xs text-rose-600" *ngIf="form.get('CheckOutDate')?.touched && form.get('CheckOutDate')?.invalid">
+                  {{ 'bookingInfo.checkOutErr' | translate }}
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <button type="button" (click)="save()"
+                      class="rounded-xl bg-slate-800 text-white px-4 py-2 hover:bg-slate-700">
+                {{ 'common.save' | translate }}
+              </button>
+              <button type="button" (click)="cancelEdit()"
+                      class="rounded-xl bg-slate-200 text-slate-900 px-4 py-2 hover:bg-slate-300">
+                {{ 'common.close' | translate }}
+              </button>
+            </div>
+          </form>
+        </ng-container>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+/* مدخلات بيج أنيقة داخل الكرت */
+.beige-input{
+  @apply w-full h-12 rounded-xl bg-white/90 text-slate-800
+         placeholder-slate-400 ring-1 ring-[#e7dccf]
+         focus:outline-none focus:ring-2 focus:ring-[#d2bfa8]
+         transition px-4;
+}
+
+/* زر كحلي فخم */
+.lux-btn-dark{
+  @apply h-12 rounded-xl font-semibold text-white tracking-wide
+         bg-[#0f2341] hover:bg-[#15345f]
+         shadow-lg shadow-slate-900/20
+         disabled:opacity-60 disabled:cursor-not-allowed
+         transition;
+}
+
+/* تكبير حقول الماتريال وإظهارها بوضوح على الخلفية الداكنة */
+.field-xl .mdc-notched-outline__notch { border-color: rgba(255,255,255,.18) !important; }
+.field-xl .mdc-notched-outline__leading,
+.field-xl .mdc-notched-outline__trailing { border-color: rgba(255,255,255,.18) !important; }
+
+.field-xl .mdc-text-field--outlined .mdc-floating-label,
+.field-xl .mdc-floating-label { color: rgba(255,255,255,.75) !important; }
+
+.field-xl .mdc-text-field__input { color: #fff !important; font-size: 16px; }
+
+.field-xl .mdc-text-field--focused .mdc-notched-outline__leading,
+.field-xl .mdc-text-field--focused .mdc-notched-outline__notch,
+.field-xl .mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: #a8b1ff !important;
+}

@@ -1,0 +1,66 @@
+<header class="bg-slate-900/95 backdrop-blur border-b border-slate-800">
+  <div class="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between gap-6">
+    <!-- Logo + زر اللغة -->
+    <a routerLink="/" class="flex items-center gap-2 font-semibold text-slate-100">
+      <img
+        src="/assets/logo/logo-resthotel.png"
+        [alt]="'brand.logoAlt' | translate"
+        class="h-6 w-auto"
+      />
+      <span class="hidden sm:inline">
+        {{ 'brand.name' | translate }}
+      </span>
+    </a>
+
+    <!-- (اختياري) زر تغيير اللغة بجانب اللوقو -->
+    <button
+      type="button"
+      (click)="i18n.toggle()"
+      class="inline-flex items-center rounded-lg border border-slate-700 px-3 py-1.5 text-slate-200 hover:bg-slate-800"
+      [attr.aria-label]="i18n.lang() === 'ar' ? 'Switch to English' : 'بدّل إلى العربية'"
+      [title]="i18n.lang() === 'ar' ? 'Switch to English' : 'بدّل إلى العربية'">
+      {{ i18n.lang() === 'ar' ? 'EN' : 'العربية' }}
+    </button>
+
+    <!-- Nav -->
+    <a routerLink="/" class="flex items-center gap-2 font-semibold text-slate-100">
+  <img src="assets/logo/logo-resthotel.png" [alt]="'brand.logoAlt' | translate" class="h-6 w-auto" />
+  <span class="hidden sm:inline">{{ 'brand.name' | translate }}</span>
+</a>
+
+<nav class="flex items-center gap-8 text-slate-700">
+  <a routerLink="/" [routerLinkActiveOptions]="{ exact:true }" routerLinkActive="text-slate-900 font-semibold" class="hover:text-slate-900">
+    {{ 'nav.home' | translate }}
+  </a>
+  <a routerLink="/rooms" routerLinkActive="text-slate-900 font-semibold" class="hover:text-slate-900">
+    {{ 'nav.rooms' | translate }}
+  </a>
+  <a href="#" (click)="goContact($event)" class="hover:text-slate-900">
+    {{ 'nav.contact' | translate }}
+  </a>
+  <a *ngIf="auth.isAdmin()" routerLink="/admin" class="hover:text-slate-900">
+    {{ 'nav.admin' | translate }}
+  </a>
+</nav>
+
+<a routerLink="/account/reservations" class="rounded-xl bg-slate-800 text-white px-4 py-2 hover:bg-slate-700">
+  {{ 'bookings' | translate }}
+</a>
+
+<button type="button" (click)="logout()" class="ml-auto rounded-xl border border-slate-300 bg-white text-slate-700 px-4 py-2 hover:bg-slate-50">
+  {{ 'auth.logout' | translate }}
+</button>
+
+
+    <!-- زر الموبايل -->
+    <button
+      type="button"
+      (click)="i18n.toggle()"
+      class="rounded-xl border border-slate-300 bg-white text-slate-700 px-3 py-1.5 md:px-4 md:py-2 hover:bg-slate-50"
+      [attr.aria-label]="i18n.lang() === 'ar' ? 'Switch to English' : 'بدّل إلى العربية'"
+      [title]="i18n.lang() === 'ar' ? 'English' : 'العربية'">
+      <span class="hidden md:inline">{{ i18n.lang() === 'ar' ? 'EN' : 'AR' }}</span>
+      <span class="md:hidden">{{ i18n.lang() === 'ar' ? 'EN' : 'ع' }}</span>
+    </button>
+  </div>
+</header>

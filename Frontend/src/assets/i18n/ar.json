@@ -1,0 +1,204 @@
+{
+  "brand": { 
+    "name": "فندق",
+    "name2": "ريست",
+     "logoAlt": "شعار ريست هوتيل"
+     },
+
+  "nav": { 
+    "home": "الرئيسية",
+     "rooms": "الغرف",
+      "contact": "تواصل معنا",
+       "admin": "الإدارة" 
+      },
+
+  "auth": {
+     "login": "تسجيل الدخول",
+      "signup": "إنشاء حساب",
+       "logout": "تسجيل الخروج" 
+      },
+
+  "bookings": "حجوزاتي",
+
+
+  "home": {
+    "heroTitle": "مرحباً بكم في غرفنا الفاخرة",
+    "heroSubtitle": "اكتشفوا الراحة والأناقة في كل زاوية",
+    "availableRooms": "الغرف المتاحة",
+    "latestRooms": "أحدث الغرف",
+    "noRoomsSelectedDates": "لا توجد غرف متاحة للتواريخ المحددة.",
+    "noRoomsYet": "لا توجد غرف حالياً. نرجو زيارة الصفحة لاحقاً.",
+    "servicesTitle": "الخدمات والمرافق",
+    "servicesSubtitle": "كل ما تحتاجه لإقامة مريحة"
+  },
+  "booking": {
+    "checkIn": " الوصول",
+    "checkOut": " المغادرة",
+    "datePlaceholder": "MM/DD/YYYY"
+  },
+  "room": {
+    "title": "الغرفة {{num}}",
+    "imageAlt": "صورة الغرفة {{num}}",
+    "perNight": "/ ليلة"
+  },
+  "services": {
+    "concierge": "خدمة استقبال على مدار الساعة",
+    "conciergeDesc": "فريقنا متواجد لخدمتكم طوال اليوم.",
+    "spa": "سبا فاخر",
+    "spaDesc": "جلسات استرخاء وتدليك باحترافية عالية.",
+    "dining": "مطاعم راقية",
+    "diningDesc": "قائمة مختارة في مطاعم حاصلة على جوائز.",
+    "pool": "مسبح مُدفأ",
+    "poolDesc": "استمتعوا بمسبحنا الداخلي المُدفأ.",
+    "fitness": "نادي لياقة",
+    "fitnessDesc": "أجهزة حديثة وجلسات تدريب شخصية.",
+    "parking": "مواقف (فالِيه)",
+    "parkingDesc": "تسليم واستلام السيارة بسهولة عند المدخل."
+  },
+  "buttons": {
+    "search": "بحث"
+  },
+  "common": {
+    "view": "عرض",
+    "seeAll": "عرض الكل",
+    "searching": "جارٍ البحث…",
+     "loading": "جارٍ التحميل…",
+  "priceLabel": "السعر:",
+  "edit": "تعديل",
+  "cancel": "إلغاء",
+  "save": "حفظ",
+  "close": "إغلاق",
+     "ok": "حسناً",
+    "dismiss": "إغلاق"
+  },
+
+
+  "contact": {
+  "header": "فندق ريست — العليا، الرياض",
+  "intro": "زورونا أو راسلونا — نرد خلال 24 ساعة.",
+  "addressLine": "طريق الملك فهد، حي العليا، الرياض 12214",
+  "openInMaps": "افتح في خرائط جوجل",
+  "phone": "+966 (555) 123-4567",
+  "email": "reservations@resthotel.com",
+  "formTitle": "تواصل معنا",
+  "statusSuccess": "شكرًا! تم استلام رسالتك.",
+  "statusError": "حدث خطأ ما. حاول مرة أخرى.",
+  "fields": {
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "message": "الرسالة",
+    "namePh": "اسمك",
+    "emailPh": "you@email.com",
+    "messagePh": "كيف يمكننا مساعدتك؟"
+  },
+  "send": "إرسال الرسالة",
+  "sending": "جاري الإرسال…",
+  "mapTitle": "فندق ريست - العليا، الرياض"
+},
+
+
+
+  "roomDetails": { "title": "تفاصيل الغرفة" },
+  "roomDetail": {
+    "label": "الغرفة",
+    "roomNumberLabel": "رقم الغرفة",
+    "descriptionLabel": "الوصف",
+    "capacity": "عدد الأفراد",
+    "available": "متاحة",
+    "unavailable": "غير متاحة",
+    "imageAlt": "صورة الغرفة {{num}}"
+  },
+  "bookingInfo": {
+    "guestName": "اسم الضيف",
+    "guestNamePh": "الاسم الكامل",
+    "guestNameErr": "الرجاء إدخال الاسم (حد أدنى حرفان)",
+    "checkInErr": "الرجاء اختيار تاريخ الوصول",
+    "checkOutErr": "الرجاء اختيار تاريخ المغادرة"
+  },
+  "bookButtons": { "bookNow": "احجز الآن" },
+  "roomLoading": "جاري تحميل بيانات الغرفة…",
+
+
+  "roomsAll": {
+  "heroTitle": "استعرض كل الغرف",
+  "heroSubtitle": "ابحث عن الغرفة المناسبة لإقامتك",
+  "filters": {
+    "searchLabel": "بحث",
+    "searchPh": "رقم الغرفة أو كلمات مفتاحية",
+    "capacityLabel": "السعة",
+    "capacityAny": "أي",
+    "sortLabel": "ترتيب",
+    "sortLatest": "الأحدث",
+    "sortPriceAsc": "السعر: من الأقل إلى الأعلى",
+    "sortPriceDesc": "السعر: من الأعلى إلى الأقل",
+    "sortCapacity": "السعة",
+    "reset": "إعادة التعيين"
+  },
+  "empty": "لا توجد غرف مطابقة لخيارات التصفية."
+},
+
+"reservations": {
+  "title": "حجوزاتي",
+  "welcome": "مرحباً، {{name}}.",
+  "empty": "لا توجد حجوزات بعد.",
+  "status": {
+    "active": "نشط",
+    "canceled": "ملغي"
+  }
+},
+
+  "toasts": {
+    "reservations": {
+      "updated": "تم تحديث الحجز بنجاح ✅",
+      "canceled": "تم إلغاء الحجز",
+      "updateFailed": "فشل تحديث الحجز",
+      "cancelFailed": "فشل إلغاء الحجز"
+    }
+  },
+
+  "dialogs": {
+    "confirmCancel": "إلغاء هذا الحجز؟"
+  },
+
+"login": {
+  "title": "تسجيل الدخول",
+  "subtitle": "مرحبًا بعودتك إلى فندق ريست",
+  "email": "البريد الإلكتروني",
+  "emailPh": "you@email.com",
+  "emailErr": "يرجى إدخال بريد إلكتروني صالح.",
+  "password": "كلمة المرور",
+  "passwordPh": "••••••••",
+  "pwdErr": "كلمة المرور مطلوبة (6 أحرف على الأقل).",
+  "signIn": "تسجيل الدخول",
+  "signingIn": "جاري تسجيل الدخول…",
+  "noAccount": "ليس لديك حساب؟",
+  "createOne": "أنشئ حسابًا"
+},
+
+"register": {
+  "title": "إنشاء حساب",
+  "subtitle": "انضم إلى فندق ريست واحجز إقامتك",
+  "fullName": "الاسم الكامل",
+  "fullNamePh": "اسمك الكامل",
+  "fullNameErr": "الاسم مطلوب (حد أدنى حرفان).",
+  "email": "البريد الإلكتروني",
+  "emailPh": "you@email.com",
+  "emailErr": "يرجى إدخال بريد إلكتروني صالح.",
+  "password": "كلمة المرور",
+  "passwordPh": "••••••••",
+  "passwordErr": "الحد الأدنى لطول كلمة المرور هو 6.",
+  "confirm": "تأكيد كلمة المرور",
+  "confirmPh": "••••••••",
+  "mismatch": "كلمتا المرور غير متطابقتين.",
+  "creating": "جاري إنشاء الحساب…",
+  "signUp": "إنشاء حساب",
+  "hasAccount": "لديك حساب بالفعل؟",
+  "signIn": "تسجيل الدخول"
+}
+
+
+
+
+}
+
+
